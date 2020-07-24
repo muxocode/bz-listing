@@ -1,3 +1,11 @@
+:root {
+  --main-bg-color: #DDD;
+  --second-bg-color: #ccc;
+  --main-color: #858080;
+  --principal-color: #000;
+  --mirror-color: #fff;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +13,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--main-bg-color);
+  color:var(--main-color) ;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+::-webkit-scrollbar{width:15px}
+::-webkit-scrollbar-track{background:var(--second-bg-color);border-radius:50px}
+::-webkit-scrollbar-thumb{background:var(--main-color);border-radius:50px}

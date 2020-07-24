@@ -1,0 +1,1 @@
+export {FilterCharacter} from "./FilterCharacter"

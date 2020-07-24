@@ -1,0 +1,15 @@
+.FilterCharacter{
+    width: 95vw;
+}
+.FilterCharacter > input{
+    width: 80%;
+    display: block;
+    border: none;
+    border-bottom: 1px solid var(--main-color);
+    font-size: xx-large;
+    background-color: transparent;
+}
+
+.FilterCharacter > input:focus{
+    outline: none;
+}

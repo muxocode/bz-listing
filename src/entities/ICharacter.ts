@@ -11,5 +11,5 @@ export interface ICharacter extends IEntity, IPairUrl
  location: IPairUrl,
  image: string,
  episode: string[],
- created: Date
+ created: string
 }

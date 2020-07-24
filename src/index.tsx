@@ -1,24 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import {App} from './app';
 import * as serviceWorker from './serviceWorker';
 import { InitContainer } from './ioc/Container';
-import { IGetService } from './model';
+import { IGetService, IErrorHandler } from './model';
 import { ICharacter } from './entities';
 import { TYPES } from './ioc';
+import {CreateCharacterRedux} from "./redux"
 import "reflect-metadata";
 
 InitContainer().then(x=>{
+
+  debugger;
+
   let oService= x.get<IGetService<ICharacter>>(TYPES.Services.IGetService.ICharacter);
-  
-  oService.Get().then(c=>{
-    debugger;
-  })
+  let redux= CreateCharacterRedux(()=>{return oService.Get()});
+  let errorHandler= x.get<IErrorHandler>(TYPES.IErrorHandler);
 
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <App context={{
+        redux,
+        errorHandler
+      }}/>
     </React.StrictMode>,
     document.getElementById('root')
   );
